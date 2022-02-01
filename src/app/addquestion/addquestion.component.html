@@ -1,0 +1,37 @@
+<div class="bodyy"><label for="question">Quel est l'intitulé de la question ?</label>
+<input type="text" id="question" [(ngModel)]="question" />
+<br><br>
+<p>Voulez vous rajouter une réponse possible ?</p>
+<label for="answer">Enonce de la réponse</label>
+<input type="text" id="anwser" [(ngModel)]="answer" />
+<br>
+<br>
+
+<!--<label for="correct">1 si réponse correct 0 sinon</label>
+<input type="text" id="correct" [(ngModel)]="correct" />-->
+
+<label for="istrue">Est-ce une bonne réponse ?</label>
+<select id="istrue" [(ngModel)]="correct">
+    <option>Vrai</option>
+    <option>Faux</option>
+  </select>
+
+<label for="qtype">De quel type est la question ?</label>
+<select id="qtype" value="Classique" [(ngModel)]="type">
+    <option>Classique</option>
+    <option>Filler</option>
+    <option>Local</option>
+  </select>
+
+<br><br>
+<button (click)="updateAnswers()">Add</button>
+<br>
+<br>
+<h2>Vos réponses sont :</h2>
+<div class="answers" *ngFor="let answer of answers" >
+    {{answer.answerTitle}}
+
+</div>
+
+<button (click)="saveQuestion()">Save</button>
+</div>

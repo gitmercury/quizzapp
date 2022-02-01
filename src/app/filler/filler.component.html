@@ -1,0 +1,25 @@
+<div class="gameBox">
+    <div class="questionBox" placeholder="Question Title">
+        {{question.questionTitle}} 
+    </div>
+    <label for="try">Joueur</label>
+    <input type="text" id="try" [(ngModel)]="try" />
+    <button (click)="tryPlayer()">Essayer un joueur </button>
+    <div class="answerBox" *ngFor="let answer of answersFound" placeholder="Question Answers">
+        <div class="answer" [ngStyle]="{'background':'green' }" >
+            {{answer}}
+            
+        </div> 
+    </div> 
+    <div class="answerBox" *ngFor="let answer of answersToFind" placeholder="Question Answers">
+        <div class="answer" [ngStyle]="{'background':'grey'}" >
+            Hidden
+            
+        </div> 
+    </div>   
+
+    <button (click)="showResult()">Voir les réponses </button>
+    <button (click)="tryAnotherOne()">Essayer un autre test </button>
+    
+    
+</div>
